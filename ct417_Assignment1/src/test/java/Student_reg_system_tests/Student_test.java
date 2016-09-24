@@ -22,7 +22,7 @@ public class Student_test {
     
     @Test
     public void getUsername_check(){
-        Student s = new Student("Eoin Clancy",21,"03/07/1995");
+        Student s = new Student("Eoin Clancy",21,"03/07/1995","4BP");
         String expected = "Eoin_Clancy_21";
         assertEquals(expected, s.getUsername());
     }

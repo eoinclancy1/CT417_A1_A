@@ -14,12 +14,14 @@ public class Student {
     private int Age;
     private String DOB;
     private String Username;
+    private String Course;
     
-    public Student(String name, int age, String dob){
+    public Student(String name, int age, String dob, String course){
     this.Name = name;
     this.Age = age;
     this.DOB = dob;
     this.Username = this.getUsername();
+    this.Course = course;
     }
 
     public String getName() {
@@ -52,6 +54,13 @@ public class Student {
         return username;
     }
 
+    public String getCourse() {
+        return Course;
+    }
+
+    public void setCourse(String Course) {
+        this.Course = Course;
+    }
     
     
 

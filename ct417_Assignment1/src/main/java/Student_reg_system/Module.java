@@ -44,6 +44,9 @@ public Module(String name, String id, ArrayList students){
         this.StudentList = StudentList;
     }
 
+    public void addToStudentList(Student s){
+        this.StudentList.add(s);
+    }
 
 
 }
