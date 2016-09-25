@@ -30,7 +30,7 @@ public class CourseProgramme {
     public void setCourseName(String CourseName) {
         this.CourseName = CourseName;
     }
-
+    
     public ArrayList getModuleList() {
         return moduleList;
     }
@@ -55,6 +55,28 @@ public class CourseProgramme {
         this.endDate = endDate;
     }
 
-    
+    public void printStudents(){
+        ArrayList<Student> CourseStudents = new ArrayList<Student>();
+        
+        ArrayList<Module> modules = new ArrayList<Module>();
+        modules = this.getModuleList();
+        for (int i=0 ; i<modules.size()-1 ; i++){
+            Module m = modules.get(i);
+            ArrayList<Student> ModuleStudents = new ArrayList<Student>();
+            ModuleStudents = m.getStudentList();
+            for (int j=0 ; j<ModuleStudents.size()-1;j++){
+                Student s = ModuleStudents.get(i);
+                if (s.getCourse().equals(this.getCourseName()) && !(CourseStudents.contains(s))){
+                    CourseStudents.add(s);
+                    System.out.println(s.getName() + "\t " + s.getCourse());
+                    System.out.print("Modules: ");
+                    for(int k=0; k<modules.size()-1;k++){
+                        System.out.print(modules.get(k));
+                    }
+                    System.out.println();
+                }
+            }
+        }
+    }
 }
 
